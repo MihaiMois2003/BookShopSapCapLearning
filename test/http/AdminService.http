@@ -1,0 +1,113 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Authors
+# @name Authors_GET
+GET {{server}}/admin/Authors
+Authorization: Basic {{username}}:{{password}}
+
+
+### Authors
+# @name Authors_POST
+POST {{server}}/admin/Authors
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 23497041,
+  "name": "name-23497041"
+}
+
+
+### Authors
+# @name Authors_PATCH
+PATCH {{server}}/admin/Authors/23497041
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 23497041,
+  "name": "name-23497041"
+}
+
+
+### Authors
+# @name Authors_DELETE
+DELETE {{server}}/admin/Authors/23497041
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Books
+# @name Books_GET
+GET {{server}}/admin/Books
+Authorization: Basic {{username}}:{{password}}
+
+
+### Books
+# @name Books_POST
+POST {{server}}/admin/Books
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 2646116,
+  "title": "title-2646116",
+  "descr": "descr-2646116",
+  "author": {
+    "ID": 23497041
+  },
+  "genre": {
+    "ID": 9329835
+  },
+  "stock": 81,
+  "price": 48.5,
+  "currency": {
+    "code": "554"
+  }
+}
+
+
+### Books
+# @name Books_PATCH
+PATCH {{server}}/admin/Books/2646116
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 2646116,
+  "title": "title-2646116",
+  "descr": "descr-2646116",
+  "author": {
+    "ID": 23497041
+  },
+  "genre": {
+    "ID": 9329835
+  },
+  "stock": 81,
+  "price": 48.5,
+  "currency": {
+    "code": "554"
+  }
+}
+
+
+### Books
+# @name Books_DELETE
+DELETE {{server}}/admin/Books/2646116
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Genres
+# @name Genres_GET
+GET {{server}}/admin/Genres
+Authorization: Basic {{username}}:{{password}}
+
+
+### Currencies
+# @name Currencies_GET
+GET {{server}}/admin/Currencies
+Authorization: Basic {{username}}:{{password}}
